@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.8 }
+  transition: { duration: 0.8 },
+};
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0 },
 };
 
 const Crypto = () => {
+  const [inView, setInView] = useState(false);
+
+  const handleScroll = () => {
+    const scrollPosition = window.scrollY;
+    const sections = document.querySelectorAll('.section');
+    sections.forEach((section: any) => {
+      if (scrollPosition + window.innerHeight >= section.offsetTop) {
+        section.classList.add('in-view');
+      } else {
+        section.classList.remove('in-view');
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
       <article className="max-w-2xl mx-auto px-4 py-8 space-y-8">
@@ -38,8 +64,11 @@ const Crypto = () => {
 
         {/* Начало проблемы */}
         <motion.section 
-          className="bg-gray-100 rounded-xl p-6 shadow-lg"
-          {...fadeIn}
+          className="bg-gray-100 rounded-xl p-6 shadow-lg section"
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+          transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">Начало проблемы</h2>
           <p className="text-gray-700 leading-relaxed text-left">
@@ -49,9 +78,11 @@ const Crypto = () => {
 
         {/* Борьба с проблемой */}
         <motion.section 
-          className="bg-blue-50 rounded-xl p-6 shadow-lg"
-          {...fadeIn}
-          transition={{ delay: 0.2 }}
+          className="bg-blue-50 rounded-xl p-6 shadow-lg section"
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+          transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl font-semibold mb-4 text-blue-700">Борьба с проблемой</h2>
           <p className="text-gray-700 leading-relaxed text-left">
@@ -61,9 +92,11 @@ const Crypto = () => {
 
         {/* Результат */}
         <motion.section 
-          className="bg-green-50 rounded-xl p-6 shadow-lg"
-          {...fadeIn}
-          transition={{ delay: 0.4 }}
+          className="bg-green-50 rounded-xl p-6 shadow-lg section"
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+          transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl font-semibold mb-4 text-green-700">Результат</h2>
           <p className="text-gray-700 leading-relaxed text-left">
@@ -73,9 +106,11 @@ const Crypto = () => {
 
         {/* Как Vitacaps помогает при геморрое */}
         <motion.section 
-          className="bg-indigo-50 rounded-xl p-6 shadow-lg"
-          {...fadeIn}
-          transition={{ delay: 0.6 }}
+          className="bg-indigo-50 rounded-xl p-6 shadow-lg section"
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+          transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl font-semibold mb-4 text-indigo-700">Как Vitacaps помогает при геморрое</h2>
           <p className="text-gray-700 leading-relaxed text-left">
@@ -85,10 +120,11 @@ const Crypto = () => {
 
         {/* Заключение */}
         <motion.footer 
-          className="bg-gray-800 text-white rounded-xl p-6 shadow-lg text-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
+          className="bg-gray-800 text-white rounded-xl p-6 shadow-lg text-center section"
+          initial="hidden"
+          animate="visible"
+          variants={sectionVariants}
+          transition={{ duration: 0.8 }}
         >
           <p className="text-lg font-medium">
             Не позволяйте боли контролировать вашу жизнь. Vitacaps может стать вашим решением, как стал моим. Начните свой путь к здоровью сегодня и верните себе радость жизни!
