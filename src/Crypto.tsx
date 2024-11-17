@@ -17,7 +17,7 @@ const Crypto = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-bold text-blue-900 leading-tight">
+          <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-900 leading-tight tracking-wide">
             Секрет, Который Помог Мне Забыть о Геморрое Раз и Навсегда!
           </h1>
         </motion.header>
