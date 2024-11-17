@@ -36,6 +36,7 @@ const Crypto = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </motion.div>
 
+        {/* Начало проблемы */}
         <motion.section 
           className="bg-white rounded-xl p-6 shadow-lg"
           {...fadeIn}
@@ -46,6 +47,7 @@ const Crypto = () => {
           </p>
         </motion.section>
 
+        {/* Борьба с проблемой */}
         <motion.section 
           className="bg-white rounded-xl p-6 shadow-lg"
           {...fadeIn}
@@ -57,6 +59,7 @@ const Crypto = () => {
           </p>
         </motion.section>
 
+        {/* Результат */}
         <motion.section 
           className="bg-white rounded-xl p-6 shadow-lg"
           {...fadeIn}
@@ -68,6 +71,7 @@ const Crypto = () => {
           </p>
         </motion.section>
 
+        {/* Как Vitacaps помогает при геморрое */}
         <motion.section 
           className="bg-white rounded-xl p-6 shadow-lg"
           {...fadeIn}
@@ -79,6 +83,7 @@ const Crypto = () => {
           </p>
         </motion.section>
 
+        {/* Заключение */}
         <motion.footer 
           className="bg-gray-800 text-white rounded-xl p-6 shadow-lg text-center"
           initial={{ opacity: 0, y: 20 }}
