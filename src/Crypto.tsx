@@ -12,12 +12,12 @@ const Crypto = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-blue-50">
       <article className="max-w-2xl mx-auto px-4 py-8 space-y-8">
         <motion.header 
-          className="text-center space-y-4"
+          className="space-y-4"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-4xl font-semibold text-gray-800 leading-tight tracking-tight">
+          <h1 className="text-4xl font-semibold text-gray-800 leading-tight tracking-normal">
             Секрет, Который Помог Мне Забыть о Геморрое Раз и Навсегда!
           </h1>
         </motion.header>
@@ -36,6 +36,7 @@ const Crypto = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
         </motion.div>
 
+        {/* Начало проблемы */}
         <motion.section 
           className="bg-white rounded-xl p-6 shadow-lg"
           {...fadeIn}
@@ -46,6 +47,7 @@ const Crypto = () => {
           </p>
         </motion.section>
 
+        {/* Борьба с проблемой */}
         <motion.section 
           className="bg-white rounded-xl p-6 shadow-lg"
           {...fadeIn}
@@ -57,6 +59,7 @@ const Crypto = () => {
           </p>
         </motion.section>
 
+        {/* Результат */}
         <motion.section 
           className="bg-white rounded-xl p-6 shadow-lg"
           {...fadeIn}
@@ -68,11 +71,24 @@ const Crypto = () => {
           </p>
         </motion.section>
 
+        {/* Как Vitacaps помогает при геморрое */}
+        <motion.section 
+          className="bg-white rounded-xl p-6 shadow-lg"
+          {...fadeIn}
+          transition={{ delay: 0.6 }}
+        >
+          <h2 className="text-2xl font-semibold mb-4 text-gray-700">Как Vitacaps помогает при геморрое</h2>
+          <p className="text-gray-700 leading-relaxed">
+            Vitacaps - это капсулы, которые были разработаны специально для людей, страдающих от хронической боли, связанной с геморроем. В их составе натуральные компоненты, которые помогают улучшить циркуляцию крови, уменьшить воспаление и снять болевой синдром. Применение этого средства не вызывает побочных эффектов, что делает его идеальным для длительного использования. Это не просто временное облегчение, а реальное улучшение состояния.
+          </p>
+        </motion.section>
+
+        {/* Заключение */}
         <motion.footer 
           className="bg-gray-800 text-white rounded-xl p-6 shadow-lg text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
         >
           <p className="text-lg font-medium">
             Не позволяйте боли контролировать вашу жизнь. Vitacaps может стать вашим решением, как стал моим. Начните свой путь к здоровью сегодня и верните себе радость жизни!
